@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "good-writer",
+  "version": "1.0.0",
+  "description": "Evidence-first Chinese reports and formal documents, with careful revision and feedback-driven improvement.",
+  "author": {
+    "name": "Life0423",
+    "url": "https://github.com/Life0423"
+  },
+  "homepage": "https://github.com/Life0423/report-document-writer",
+  "repository": "https://github.com/Life0423/report-document-writer",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "reports",
+    "documents",
+    "Chinese"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "goodWriter",
+        "shortDescription": "基于真实材料撰写、修改和审阅中文报告与正式文书",
+        "longDescription": "保留 goodWriter 的证据优先、自然表达、局部修订和反馈迭代方法。无需 API 密钥或自建服务。",
+        "developerName": "Life0423",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "使用 goodWriter，根据我的材料撰写报告，不虚构事实或经历。",
+          "使用 goodWriter，按批注修改这份文书，只调整指定范围。",
+          "使用 goodWriter，审阅报告中的证据、分析与总结。"
+        ]
+      }
+    }
+  }
+}

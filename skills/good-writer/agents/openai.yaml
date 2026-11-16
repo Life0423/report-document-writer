@@ -1,0 +1,7 @@
+interface:
+  display_name: "goodWriter"
+  short_description: "基于真实材料写报告与文书，提炼知识理解、自然表达，并按反馈精修与核验交付"
+  default_prompt: "使用 $good-writer，按我的材料、受众和修改范围完成报告或文书，不虚构事实或经历，并核对最终交付。"
+
+policy:
+  allow_implicit_invocation: true

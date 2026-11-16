@@ -1,39 +1,38 @@
-# Report & Document Writer
+# goodWriter
 
-An evidence-first AI skill for Chinese reports and formal documents.
+Evidence-first Chinese report and document writing, adapted from the owner's existing goodWriter skill.
 
-用于中文报告与正式文书的撰写、改写、审校、风格匹配和交付检查。以真实材料为依据，不编造数据、文献、经历或完成状态。
+本仓库已用现成的 **goodWriter** 替换原 Report & Document Writer。保留原仓库地址和版本历史；当前技能目录为 `skills/good-writer`。
 
-## What it does / 能力
+## 能力
 
-- 课程与实验报告、项目报告、调研报告、总结与方案。
-- 申请书、说明、通知、会议纪要等正式文书。
-- 明确受众、模板和事实边界，组织证据与结构，再完成成稿。
-- 复核数字、引用、术语、排版与待补充项。
+- 根据真实材料撰写、修改、审阅中文课程/实验/项目/调研报告及正式文书。
+- 总结提炼知识理解与有依据的收获，不把总结写成摘要或完成清单。
+- 自然表达、按批注局部修订、图文与最终交付核验。
+- 不虚构经历、成绩、数据、心理变化或未来承诺。
+- 正式文书按受众和目的组织，不强加学生口吻或课堂心得。
 
-## Use / 使用
+## 使用
 
-Install the `skills/report-document-writer` directory in an assistant that supports agent skills, following that host's installation instructions. The skill is text-based and requires no API keys or custom service. Document rendering, web research and file export depend on the host's available tools.
+在支持 Agent Skills 的宿主中安装 `skills/good-writer`，按宿主的安装方式操作。支持隐式调用的宿主可以根据报告/文书任务自动选用；也可明确要求使用 `goodWriter` 或 `$good-writer`。技能不能强制所有普通 GPT 聊天加载它，不修改账号设置。
 
-支持隐式调用的宿主可依据任务描述自动选用本技能；也可明确要求使用 `report-document-writer`。实际触发行为由宿主控制，本仓库不会自动修改任何账号设置。
+> 使用 goodWriter，根据我提供的材料完成报告；总结重点写有依据的知识理解，不复述完成清单，也不擅加未来计划。
 
-Example prompt:
+文件导出、视觉核验和研究取决于宿主可用工具。无需 API 密钥或自建服务。
 
-> 使用 report-document-writer，根据我提供的材料和模板撰写项目报告。先区分已验证结果与待完成工作，保持事实和数据可追溯，缺失信息标为待补充。
+## 结构
 
-## Layout
+- `SKILL.md`：触发描述与写作流程
+- `references/`：总结方法、自然中文、范文借鉴、局部修订、复核、来源和维护规则
+- `evals/cases.json`：14 个虚构测试场景
+- `agents/openai.yaml`：显示名与隐式调用元数据
 
-- `skills/report-document-writer/SKILL.md`: workflow and activation description
-- `skills/report-document-writer/references/`: document patterns and delivery checklist
-- `skills/report-document-writer/agents/openai.yaml`: optional host metadata
-- `skills/report-document-writer/assets/icon.svg`: project icon
+## 迭代与隐私
 
-## Privacy and iteration / 隐私与迭代
+依据任务中的明确反馈做最小、可验证改进；仅公开通用规则和虚构测试。不要提交原始聊天、报告、教师评语、同学作品、截图、身份、账号、配置或机密资料。个人偏好与一次性要求不可自动变成通用写法。审查差异并验证相关场景，无实质改动则不提交。
 
-Improve reusable methods from feedback, not by collecting private task content. Public changes should contain generalized rules and synthetic or properly anonymized examples only. Do not commit private reports, raw conversations, personal writing samples, credentials, account identifiers or confidential source material. Review diffs and run representative checks before publishing an update.
+定期同步由宿主的独立计划任务执行，本技能本身不含定时器。写稿不授权发送、提交、签署或发布。
 
-This skill drafts documents; it does not itself authorize sending, submitting, publishing or signing them. It is not a substitute for qualified legal, medical or financial review.
+## 来源与许可
 
-## License and attribution
-
-MIT. Maintained by Life0423. Developed with AI assistance. The public package contains the project skill and its supporting files, not third-party tool implementations or private task data.
+MIT，延续本仓库许可。goodWriter 来源于所有者既有本地技能，不是把旧技能改名；迁入时去除了私人案例背景，保留通用方法。大学指南和公开写作技能仅作为方法参考，采用范围见 `references/sources.md`。不包含第三方工具实现或私人原始资料。
